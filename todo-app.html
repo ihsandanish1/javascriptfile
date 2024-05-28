@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+       html, body {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .container {
+            width: 360px;
+        }
+        #inputfield {
+            width: 300px;
+            height: 46px;
+            border: 1px solid black;
+            outline: none;
+            font-size: 35px;
+            vertical-align: middle;
+        }
+        #addtodo {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            vertical-align: middle;
+            font-size: 30px;
+        }
+        .todo {
+            margin-top: 25px;
+        }
+        .paragraph-styling {
+            margin: 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Todo App</h1>
+   
+<div class="container">
+    <input id="inputfield" type="text">
+    <button id="addtodo"> + </button>
+    <div class="todo" id="todo-container">
+    </div>
+</div>
+    
+<script>
+   let addtodobutton = document.getElementById('addtodo');
+   let todocontainer = document.getElementById('todo-container');
+   let inputfield = document.getElementById('inputfield');
+
+   addtodobutton.addEventListener('click', function() {
+        var paragraph = document.createElement('p');
+        paragraph.classList.add('paragraph-styling');
+        paragraph.innerText = inputfield.value;
+        todocontainer.appendChild(paragraph);
+        inputfield.value = ''; 
+   });
+</script>
+</body>
+</html>
